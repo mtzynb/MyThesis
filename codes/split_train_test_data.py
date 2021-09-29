@@ -1,27 +1,39 @@
-from Bio import SeqIO
+import math
 import random
-from get_random_seq import get_random_seq
 
-data_pos_dir100 = '../data/split_data/preprocess_level1_length_filter/ACP_100_pos_preprocess_level1.fasta'
-data_neg_dir100 = '../data/split_data/preprocess_level1_length_filter/ACP_100_neg_preprocess_level1.fasta'
-output_new_neg_file100 = '../data/split_data/random_neg_data/ACP_100_neg_random.fasta'
+from Bio import SeqIO
 
-# data_pos_dir90 = '../data/split_data/preprocess_level1_length_filter/ACP_90_pos_preprocess_level1.fasta'
-# data_neg_dir90 = '../data/split_data/preprocess_level1_length_filter/ACP_90_neg_preprocess_level1.fasta'
-# output_new_neg_file90 = '../data/split_data/random_neg_data/ACP_90_neg_random.fasta'
 
-# data_pos_dir80 = '../data/split_data/preprocess_level1_length_filter/ACP_80_pos_preprocess_level1.fasta'
-# data_neg_dir80 = '../data/split_data/preprocess_level1_length_filter/ACP_80_neg_preprocess_level1.fasta'
-# output_new_neg_file80 = '../data/split_data/random_neg_data/ACP_80_neg_random.fasta'
+def calc_test_train_data_count(no_of_whole_data, percentage_of_data_to_use_for_train):
+    train_data_count = math.ceil(no_of_whole_data * percentage_of_data_to_use_for_train)
+    test_data_count = no_of_whole_data - train_data_count
 
-# count_pos_seq100 = count_seq_samples(data_pos_dir100)
-# print("count_pos_seq100: ", count_pos_seq100)
-# get_random_seq(data_neg_dir100, count_pos_seq100, output_new_neg_file100)
+    return train_data_count, test_data_count
 
-# count_pos_seq90 = count_seq_samples(data_pos_dir90)
-# print("count_pos_seq90: ", count_pos_seq90)
-# get_random_seq(data_neg_dir90, count_pos_seq90, output_new_neg_file90)
 
-# count_pos_seq80 = count_seq_samples(data_pos_dir80)
-# print("count_pos_seq80: ", count_pos_seq80)
-# get_random_seq(data_neg_dir80, count_pos_seq80, output_new_neg_file80)
+def split_train_test_data(input_data, output_train_file, output_test_file, train_split_count):
+    records = list(SeqIO.parse(input_data, "fasta"))
+
+    random.seed(25)
+    train_data = random.sample(records, train_split_count)
+    train_data_id = [train_data[i].id for i in range(len(train_data))]
+    records_id = [records[i].id for i in range(len(records))]
+
+    print("records_id len", len(records_id))
+    print("train_data_id len", len(train_data_id))
+
+    test_data_id = list(set(records_id) - set(train_data_id))
+    print("test_data_id len", len(test_data_id))
+
+    test_data = []
+
+    for i in range(len(records)):
+        for j in range(len(test_data_id)):
+            if records[i].id == test_data_id[j]:
+                test_data.append(records[i])
+
+    print("train_data : ", len(train_data))
+    print("test_data : ", len(test_data))
+
+    SeqIO.write(train_data, output_train_file, "fasta")
+    SeqIO.write(test_data, output_test_file, "fasta")

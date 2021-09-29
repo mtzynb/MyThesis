@@ -17,6 +17,21 @@ def count_seq_samples(fasta_input_file):
     count_seq = len([1 for line in open(fasta_input_file) if line.startswith(">")])
     return count_seq
 
+
+def combine_pos_neg_data_in_a_single_file(pos_data_file, neg_data_file, combined_output_file):
+    combined_data = []
+    pos_data = [SeqIO.parse(open(pos_data_file, mode='r'), 'fasta')]
+
+    neg_data = [SeqIO.parse(open(neg_data_file, mode='r'), 'fasta')]
+
+    print(pos_data)
+
+    combined_data.append(pos_data)
+    # combined_data.append(neg_data)
+
+    SeqIO.write(combined_data, combined_output_file, "fasta")
+    print("combine_pos_neg_data_in_a_single_file End.")
+
 # check_seq_length("../../data/ACP_dataset/fasta/ACP-Mixed-100.fasta", "ACP-Mixed-100_preprocess_level1.fasta")
 # check_seq_length("../../data/ACP_dataset/fasta/ACP-Mixed-90.fasta", "ACP-Mixed-90_preprocess_level1.fasta")
 # check_seq_length("../../data/ACP_dataset/fasta/ACP-Mixed-80.fasta", "ACP-Mixed-80_preprocess_level1.fasta")
