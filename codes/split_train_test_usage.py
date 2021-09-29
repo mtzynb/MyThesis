@@ -1,4 +1,4 @@
-from split_train_test_data import calc_test_train_data_count, split_train_test_data
+from split_train_test_data_split import calc_test_train_data_count, split_train_test_data
 from preprocess_data import count_seq_samples
 
 ## --------------------------------------------------------------------------
