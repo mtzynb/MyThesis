@@ -1,4 +1,4 @@
-from preprocess_data import count_seq_samples
+from preprocess_dataaa import count_seq_samples
 
 train_100_pos_dir = '../data/split_data/test_train_data_main/cdhit100/train_100_pos.fasta'
 train_100_neg_dir = '../data/split_data/test_train_data_main/cdhit100/train_100_neg.fasta'

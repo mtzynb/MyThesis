@@ -1,5 +1,5 @@
 from split_train_test_data_split import calc_test_train_data_count, split_train_test_data
-from preprocess_data import count_seq_samples
+from preprocess_dataaa import count_seq_samples
 
 ## --------------------------------------------------------------------------
 input_data_pos_dir100 = '../data/split_data/preprocess_level1_length_filter/ACP_100_pos_preprocess_level1.fasta'

@@ -1,4 +1,4 @@
-from preprocess_data import combine_pos_neg_data_in_a_single_file
+from preprocess_dataaa import combine_pos_neg_data_in_a_single_file
 
 train_100_pos_dir = '../data/split_data/test_train_data_main/cdhit100/train_100_pos.fasta'
 train_100_neg_dir = '../data/split_data/test_train_data_main/cdhit100/train_100_neg.fasta'

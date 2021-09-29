@@ -1,6 +1,6 @@
 from Bio import SeqIO
 import random
-from preprocess_data import count_seq_samples
+from preprocess_dataaa import count_seq_samples
 
 
 def get_random_seq(input_file, n, output_file):
