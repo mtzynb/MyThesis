@@ -26,14 +26,20 @@ def split_all_data():
     get_seq_by_class_label("../../../data/ACP_dataset/fasta/ACP-Mixed-70.fasta", "1", "ACP_70_pos.fasta")
     get_seq_by_class_label("../../../data/ACP_dataset/fasta/ACP-Mixed-70.fasta", "0", "ACP_70_neg.fasta")
 
-    get_seq_by_class_label("../../../data/ACP_dataset/fasta/ACP-Mixed-80.fasta", "1", "ACP_80_pos.fasta")
-    get_seq_by_class_label("../../../data/ACP_dataset/fasta/ACP-Mixed-80.fasta", "0", "ACP_80_neg.fasta")
+    get_seq_by_class_label("../../../data/ACP_dataset/fasta/ACP-Mixed-80.fasta", "1",
+                           "../data/split_data/raw_data_after_split_pos_and_neg/ACP_80_pos.fasta")
+    get_seq_by_class_label("../../../data/ACP_dataset/fasta/ACP-Mixed-80.fasta", "0",
+                           "../data/split_data/raw_data_after_split_pos_and_neg/ACP_80_neg.fasta")
 
-    get_seq_by_class_label("../../../data/ACP_dataset/fasta/ACP-Mixed-90.fasta", "1", "ACP_90_pos.fasta")
-    get_seq_by_class_label("../../../data/ACP_dataset/fasta/ACP-Mixed-90.fasta", "0", "ACP_90_neg.fasta")
+    get_seq_by_class_label("../../../data/ACP_dataset/fasta/ACP-Mixed-90.fasta", "1",
+                           "../data/split_data/raw_data_after_split_pos_and_neg/ACP_90_pos.fasta")
+    get_seq_by_class_label("../../../data/ACP_dataset/fasta/ACP-Mixed-90.fasta", "0",
+                           "../data/split_data/raw_data_after_split_pos_and_neg/ACP_90_neg.fasta")
 
-    get_seq_by_class_label("../../../data/ACP_dataset/fasta/ACP-Mixed-100.fasta", "1", "ACP_100_pos.fasta")
-    get_seq_by_class_label("../../../data/ACP_dataset/fasta/ACP-Mixed-100.fasta", "0", "ACP_100_neg.fasta")
+    get_seq_by_class_label("../../../data/ACP_dataset/fasta/ACP-Mixed-100.fasta", "1",
+                           "../data/split_data/raw_data_after_split_pos_and_neg/ACP_100_pos.fasta")
+    get_seq_by_class_label("../../../data/ACP_dataset/fasta/ACP-Mixed-100.fasta", "0",
+                           "../data/split_data/raw_data_after_split_pos_and_neg/ACP_100_neg.fasta")
 
 
 split_all_data()

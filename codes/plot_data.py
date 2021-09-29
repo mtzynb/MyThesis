@@ -62,10 +62,10 @@ def draw_all_plots():
     draw_line_plot('../split_data/ACP_100_neg.fasta', 'Plot of non-ACP Peptide Sequences With 100% cd-hit ',
                    'ACP_100_neg', 70, 130)
     # -----------------------------
-    draw_line_plot('../../../data/ACP_dataset/fasta/ACP_mixed_all_pos.fasta',
+    draw_line_plot('../data/ACP_dataset/fasta/ACP_mixed_all_pos.fasta',
                    'Plot of Original ACP Peptide Sequences Length(no cd-hit)',
                    'Original_ACP_pos', 150, 65)
-    draw_line_plot('../../../data/ACP_dataset/fasta/ACP_mixed_all_neg.fasta',
+    draw_line_plot('../data/ACP_dataset/fasta/ACP_mixed_all_neg.fasta',
                    'Plot of Original non-ACP Peptide Sequences Length(no cd-hit)',
                    'Original_ACP_neg', 70, 150)
     # -----------------------------
