@@ -6,7 +6,7 @@ def get_label_data(fasta_input_dir, output_file_dir):
 
     for seq_record in SeqIO.parse(open(fasta_input_dir, mode='r'), 'fasta'):
         peptide_id, label_id = seq_record.id.split('|')
-        label_record = peptide_id + "\t" + label_id + "\n"
+        label_record = seq_record.id + "\t" + label_id + "\n"
         labels = labels + label_record
 
     f = open(output_file_dir, "w")
