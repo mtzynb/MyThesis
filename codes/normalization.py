@@ -1,9 +1,6 @@
 from sklearn.preprocessing import MinMaxScaler
 import pandas as pd
-
-
-def get_data_frame_from_tsv_file(tsv_file):
-    return pd.read_csv(tsv_file, sep="\t")
+from tsv_file_utils import get_data_frame_from_tsv_file
 
 
 def normalize_data(input_df):
