@@ -28,24 +28,24 @@ def draw_line_plot(fasta_input_file, plot_title, plot_out_file, x_text, y_text):
 
 def draw_all_plots():
     # -----------------------------
-    draw_line_plot('../../data/split_data/test_train_data_main/mixed_data/test_mixed_80.fasta',
+    draw_line_plot('../../../data/split_data/round2/test_train_data_main/mixed_data/test_mixed_80.fasta',
                    'Plot of Test Mixed ACP and non-ACP Peptide Sequences With 80% cd-hit ',
                    'test_mixed_80', 60, 9)
-    draw_line_plot('../../data/split_data/test_train_data_main/mixed_data/train_mixed_80.fasta',
+    draw_line_plot('../../../data/split_data/round2/test_train_data_main/mixed_data/train_mixed_80.fasta',
                    'Plot of Train Mixed ACP and non-ACP Peptide Sequences With 80% cd-hit ',
                    'train_mixed_80', 70, 30)
     # -----------------------------
-    draw_line_plot('../../data/split_data/test_train_data_main/mixed_data/test_mixed_90.fasta',
+    draw_line_plot('../../../data/split_data/round2/test_train_data_main/mixed_data/test_mixed_90.fasta',
                    'Plot of Test Mixed ACP and non-ACP Peptide Sequences With 90% cd-hit ',
                    'test_mixed_90', 50, 10)
-    draw_line_plot('../../data/split_data/test_train_data_main/mixed_data/train_mixed_90.fasta',
+    draw_line_plot('../../../data/split_data/round2/test_train_data_main/mixed_data/train_mixed_90.fasta',
                    'Plot of Train Mixed ACP and non-ACP Peptide Sequences With 90% cd-hit ',
                    'train_mixed_90', 70, 35)
     # -----------------------------
-    draw_line_plot('../../data/split_data/test_train_data_main/mixed_data/test_mixed_100.fasta',
+    draw_line_plot('../../../data/split_data/round2/test_train_data_main/mixed_data/test_mixed_100.fasta',
                    'Plot of Test Mixed ACP and non-ACP Peptide Sequences With 100% cd-hit ',
                    'test_mixed_100', 60, 15)
-    draw_line_plot('../../data/split_data/test_train_data_main/mixed_data/train_mixed_100.fasta',
+    draw_line_plot('../../../data/split_data/round2/test_train_data_main/mixed_data/train_mixed_100.fasta',
                    'Plot of Train Mixed ACP and non-ACP Peptide Sequences With 100% cd-hit ',
                    'train_mixed_100', 70, 70)
     # -----------------------------

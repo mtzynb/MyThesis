@@ -17,6 +17,16 @@ def count_seq_samples(fasta_input_file):
     count_seq = len([1 for line in open(fasta_input_file) if line.startswith(">")])
     return count_seq
 
+
+def count_seq_samples_by_class_label(input_fasta, class_label):
+    query = "|" + class_label
+    count = 0
+    for seq_record in SeqIO.parse(open(input_fasta, mode='r'), 'fasta'):
+        if query in seq_record.id:
+            count += 1
+
+    return count
+
 # check_seq_length("../../data/ACP_dataset/fasta/ACP-Mixed-100.fasta", "ACP-Mixed-100_preprocess_level1.fasta")
 # check_seq_length("../../data/ACP_dataset/fasta/ACP-Mixed-90.fasta", "ACP-Mixed-90_preprocess_level1.fasta")
 # check_seq_length("../../data/ACP_dataset/fasta/ACP-Mixed-80.fasta", "ACP-Mixed-80_preprocess_level1.fasta")

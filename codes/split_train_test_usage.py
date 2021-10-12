@@ -4,10 +4,10 @@ from preprocess_dataaa import count_seq_samples
 ## --------------------------------------------------------------------------
 input_data_pos_dir100 = '../data/split_data/preprocess_level1_length_filter/ACP_100_pos_preprocess_level1.fasta'
 input_data_neg_dir100 = '../data/split_data/random_neg_data/ACP_100_neg_random.fasta'
-train_100_pos_dir = '../data/split_data/test_train_data_main/cdhit100/train_100_pos.fasta'
-train_100_neg_dir = '../data/split_data/test_train_data_main/cdhit100/train_100_neg.fasta'
-test_100_pos_dir = '../data/split_data/test_train_data_main/cdhit100/test_100_pos.fasta'
-test_100_neg_dir = '../data/split_data/test_train_data_main/cdhit100/test_100_neg.fasta'
+train_100_pos_dir = '../data/split_data/round2/test_train_data_main/cdhit100/train_100_pos.fasta'
+train_100_neg_dir = '../data/split_data/round2/test_train_data_main/cdhit100/train_100_neg.fasta'
+test_100_pos_dir = '../data/split_data/round2/test_train_data_main/cdhit100/test_100_pos.fasta'
+test_100_neg_dir = '../data/split_data/round2/test_train_data_main/cdhit100/test_100_neg.fasta'
 
 count_pos_seq = count_seq_samples(input_data_pos_dir100)
 print("count_seqs cdhit100: ", count_pos_seq)
@@ -21,10 +21,10 @@ split_train_test_data(input_data_neg_dir100, train_100_neg_dir, test_100_neg_dir
 
 input_data_pos_dir90 = '../data/split_data/preprocess_level1_length_filter/ACP_90_pos_preprocess_level1.fasta'
 input_data_neg_dir90 = '../data/split_data/random_neg_data/ACP_90_neg_random.fasta'
-train_90_pos_dir = '../data/split_data/test_train_data_main/cdhit90/train_90_pos.fasta'
-train_90_neg_dir = '../data/split_data/test_train_data_main/cdhit90/train_90_neg.fasta'
-test_90_pos_dir = '../data/split_data/test_train_data_main/cdhit90/test_90_pos.fasta'
-test_90_neg_dir = '../data/split_data/test_train_data_main/cdhit90/test_90_neg.fasta'
+train_90_pos_dir = '../data/split_data/round2/test_train_data_main/cdhit90/train_90_pos.fasta'
+train_90_neg_dir = '../data/split_data/round2/test_train_data_main/cdhit90/train_90_neg.fasta'
+test_90_pos_dir = '../data/split_data/round2/test_train_data_main/cdhit90/test_90_pos.fasta'
+test_90_neg_dir = '../data/split_data/round2/test_train_data_main/cdhit90/test_90_neg.fasta'
 
 count_pos_seq = count_seq_samples(input_data_pos_dir90)
 print("count_seqs cdhit90: ", count_pos_seq)
@@ -37,10 +37,10 @@ split_train_test_data(input_data_neg_dir90, train_90_neg_dir, test_90_neg_dir, p
 ## --------------------------------------------------------------------------
 input_data_pos_dir80 = '../data/split_data/preprocess_level1_length_filter/ACP_80_pos_preprocess_level1.fasta'
 input_data_neg_dir80 = '../data/split_data/random_neg_data/ACP_80_neg_random.fasta'
-train_80_pos_dir = '../data/split_data/test_train_data_main/cdhit80/train_80_pos.fasta'
-train_80_neg_dir = '../data/split_data/test_train_data_main/cdhit80/train_80_neg.fasta'
-test_80_pos_dir = '../data/split_data/test_train_data_main/cdhit80/test_80_pos.fasta'
-test_80_neg_dir = '../data/split_data/test_train_data_main/cdhit80/test_80_neg.fasta'
+train_80_pos_dir = '../data/split_data/round2/test_train_data_main/cdhit80/train_80_pos.fasta'
+train_80_neg_dir = '../data/split_data/round2/test_train_data_main/cdhit80/train_80_neg.fasta'
+test_80_pos_dir = '../data/split_data/round2/test_train_data_main/cdhit80/test_80_pos.fasta'
+test_80_neg_dir = '../data/split_data/round2/test_train_data_main/cdhit80/test_80_neg.fasta'
 
 count_pos_seq = count_seq_samples(input_data_pos_dir80)
 print("count_seqs cdhit80: ", count_pos_seq)
