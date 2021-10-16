@@ -1,11 +1,11 @@
 from Bio import SeqIO
 
 
-def check_seq_length(fasta_file_name, output_file):
+def filter_seq_length(fasta_file_name, output_file, min_len, max_len):
     result = []
     c = 0
     for seq_record in SeqIO.parse(open(fasta_file_name, mode='r'), 'fasta'):
-        if 10 < len(seq_record) < 100:
+        if min_len < len(seq_record) < max_len:
             c += 1
             result.append(seq_record)
 
@@ -27,24 +27,42 @@ def count_seq_samples_by_class_label(input_fasta, class_label):
 
     return count
 
-# check_seq_length("../../data/ACP_dataset/fasta/ACP-Mixed-100.fasta", "ACP-Mixed-100_preprocess_level1.fasta")
-# check_seq_length("../../data/ACP_dataset/fasta/ACP-Mixed-90.fasta", "ACP-Mixed-90_preprocess_level1.fasta")
-# check_seq_length("../../data/ACP_dataset/fasta/ACP-Mixed-80.fasta", "ACP-Mixed-80_preprocess_level1.fasta")
-# count_seq_samples("ACP-Mixed-100_preprocess_level1.fasta", None)  # 4785
-# count_seq_samples("ACP-Mixed-90_preprocess_level1.fasta", None)  # 4322
-# count_seq_samples("ACP-Mixed-80_preprocess_level1.fasta", None)  # 4066
 
-# check_seq_length("../../data/split_data/ACP_100_pos.fasta", "ACP_100_pos_preprocess_level1.fasta")
-# check_seq_length("../../data/split_data/ACP_100_neg.fasta", "ACP_100_neg_preprocess_level1.fasta")
-# count_seq_samples("ACP_100_pos_preprocess_level1.fasta", None)  #
-# count_seq_samples("ACP_100_neg_preprocess_level1.fasta", None)  #
-#
-# check_seq_length("../../data/split_data/ACP_90_pos.fasta", "ACP_90_pos_preprocess_level1.fasta")
-# check_seq_length("../../data/split_data/ACP_90_neg.fasta", "ACP_90_neg_preprocess_level1.fasta")
-# count_seq_samples("ACP_90_pos_preprocess_level1.fasta", None)  #
-# count_seq_samples("ACP_90_neg_preprocess_level1.fasta", None)  #
+# filter_seq_length("../data/new_cdhit/round3/corrected_files/new-corrected-ACP-Mixed-90.fasta",
+#                   "../data/split_data/round3/preprocess_level1_length_filter/ACP-Mixed-90_preprocess_level1.fasta",
+#                   4, 51)
+# filter_seq_length("../data/new_cdhit/round3/corrected_files/new-corrected-ACP-Mixed-80.fasta",
+#                   "../data/split_data/round3/preprocess_level1_length_filter/ACP-Mixed-80_preprocess_level1.fasta",
+#                   4, 51)
+# count_seq_samples(
+#     "../data/split_data/round3/preprocess_level1_length_filter/ACP-Mixed-80_preprocess_level1.fasta")  # 4714
+# count_seq_samples(
+#     "../data/split_data/round3/preprocess_level1_length_filter/ACP-Mixed-80_preprocess_level1.fasta")  # 4423
 
-# check_seq_length("../../data/split_data/ACP_80_pos.fasta", "ACP_80_pos_preprocess_level1.fasta")
-# check_seq_length("../../data/split_data/ACP_80_neg.fasta", "ACP_80_neg_preprocess_level1.fasta")
-# count_seq_samples("ACP_80_pos_preprocess_level1.fasta", None)  #
-# count_seq_samples("ACP_80_neg_preprocess_level1.fasta", None)  #
+
+# filter_seq_length("../data/split_data/round3/raw_data_after_split_pos_and_neg/ACP_90_pos.fasta",
+#                   "../data/split_data/round3/preprocess_level1_length_filter/ACP_90_pos_preprocess_level1.fasta", 4, 51)
+# filter_seq_length("../data/split_data/round3/raw_data_after_split_pos_and_neg/ACP_90_neg.fasta",
+#                   "../data/split_data/round3/preprocess_level1_length_filter/ACP_90_neg_preprocess_level1.fasta", 4, 51)
+# count_seq_samples(
+#     "../data/split_data/round3/preprocess_level1_length_filter/ACP_90_pos_preprocess_level1.fasta")  # 470
+# count_seq_samples(
+#     "../data/split_data/round3/preprocess_level1_length_filter/ACP_90_neg_preprocess_level1.fasta")  # 4244
+
+# filter_seq_length("../data/split_data/round3/raw_data_after_split_pos_and_neg/ACP_80_pos.fasta",
+#                   "../data/split_data/round3/preprocess_level1_length_filter/ACP_80_pos_preprocess_level1.fasta"
+#                   , 4, 51)
+# filter_seq_length("../data/split_data/round3/raw_data_after_split_pos_and_neg/ACP_80_neg.fasta",
+#                   "../data/split_data/round3/preprocess_level1_length_filter/ACP_80_neg_preprocess_level1.fasta"
+#                   , 4, 51)
+# count_seq_samples(
+#     "../data/split_data/round3/preprocess_level1_length_filter/ACP_80_pos_preprocess_level1.fasta")  # 341
+# count_seq_samples(
+#     "../data/split_data/round3/preprocess_level1_length_filter/ACP_80_neg_preprocess_level1.fasta")  # 4082
+
+
+# filter_seq_length("../data/ACP_dataset/fasta/ACP_mixed_all_pos_neg.fasta",
+#                   "../data/split_data/round3/preprocess_level1_length_filter/ACP_mixed_all_pos_neg_preprocess_level1.fasta"
+#                   , 4, 51)
+# count_seq_samples(
+#     "../data/split_data/round3/preprocess_level1_length_filter/ACP_mixed_all_pos_neg_preprocess_level1.fasta")  # 5190

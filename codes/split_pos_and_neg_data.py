@@ -14,32 +14,15 @@ def get_seq_by_class_label(file_name, class_label, output_file):
 
 
 def split_all_data():
-    get_seq_by_class_label("../../../data/ACP_dataset/fasta/ACP-Mixed-40.fasta", "1", "ACP_40_pos.fasta")
-    get_seq_by_class_label("../../../data/ACP_dataset/fasta/ACP-Mixed-40.fasta", "0", "ACP_40_neg.fasta")
+    get_seq_by_class_label("../data/new_cdhit/round3/corrected_files/new-corrected-ACP-Mixed-80.fasta", "1",
+                           "../data/split_data/round3/raw_data_after_split_pos_and_neg/ACP_80_pos.fasta")
+    get_seq_by_class_label("../data/new_cdhit/round3/corrected_files/new-corrected-ACP-Mixed-80.fasta", "0",
+                           "../data/split_data/round3/raw_data_after_split_pos_and_neg/ACP_80_neg.fasta")
 
-    get_seq_by_class_label("../../../data/ACP_dataset/fasta/ACP-Mixed-50.fasta", "1", "ACP_50_pos.fasta")
-    get_seq_by_class_label("../../../data/ACP_dataset/fasta/ACP-Mixed-50.fasta", "0", "ACP_50_neg.fasta")
-
-    get_seq_by_class_label("../../../data/ACP_dataset/fasta/ACP-Mixed-60.fasta", "1", "ACP_60_pos.fasta")
-    get_seq_by_class_label("../../../data/ACP_dataset/fasta/ACP-Mixed-60.fasta", "0", "ACP_60_neg.fasta")
-
-    get_seq_by_class_label("../../../data/ACP_dataset/fasta/ACP-Mixed-70.fasta", "1", "ACP_70_pos.fasta")
-    get_seq_by_class_label("../../../data/ACP_dataset/fasta/ACP-Mixed-70.fasta", "0", "ACP_70_neg.fasta")
-
-    get_seq_by_class_label("../../../data/ACP_dataset/fasta/ACP-Mixed-80.fasta", "1",
-                           "../data/split_data/round2/raw_data_after_split_pos_and_neg/ACP_80_pos.fasta")
-    get_seq_by_class_label("../../../data/ACP_dataset/fasta/ACP-Mixed-80.fasta", "0",
-                           "../data/split_data/round2/raw_data_after_split_pos_and_neg/ACP_80_neg.fasta")
-
-    get_seq_by_class_label("../../../data/ACP_dataset/fasta/ACP-Mixed-90.fasta", "1",
-                           "../data/split_data/round2/raw_data_after_split_pos_and_neg/ACP_90_pos.fasta")
-    get_seq_by_class_label("../../../data/ACP_dataset/fasta/ACP-Mixed-90.fasta", "0",
-                           "../data/split_data/round2/raw_data_after_split_pos_and_neg/ACP_90_neg.fasta")
-
-    get_seq_by_class_label("../../../data/ACP_dataset/fasta/ACP-Mixed-100.fasta", "1",
-                           "../data/split_data/round2/raw_data_after_split_pos_and_neg/ACP_100_pos.fasta")
-    get_seq_by_class_label("../../../data/ACP_dataset/fasta/ACP-Mixed-100.fasta", "0",
-                           "../data/split_data/round2/raw_data_after_split_pos_and_neg/ACP_100_neg.fasta")
-
+    get_seq_by_class_label("../data/new_cdhit/round3/corrected_files/new-corrected-ACP-Mixed-90.fasta", "1",
+                           "../data/split_data/round3/raw_data_after_split_pos_and_neg/ACP_90_pos.fasta")
+    get_seq_by_class_label("../data/new_cdhit/round3/corrected_files/new-corrected-ACP-Mixed-90.fasta", "0",
+                           "../data/split_data/round3/raw_data_after_split_pos_and_neg/ACP_90_neg.fasta")
 
 split_all_data()
+print("done")
