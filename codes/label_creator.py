@@ -16,7 +16,8 @@ def get_label_data(fasta_input_dir, output_file_dir):
 
 
 def get_label_data_from_tsv_file(tsv_input, output_file):
-    labels = ''
+    labels = "seq_id" + "\t" + "label_id" + "\n"
+
     input_df = get_data_frame_from_tsv_file(tsv_input)
     first_col = input_df.iloc[:, 0]
     for i in range(len(first_col)):
