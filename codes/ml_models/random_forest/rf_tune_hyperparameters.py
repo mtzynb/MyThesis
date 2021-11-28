@@ -2,7 +2,6 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import RandomizedSearchCV
 from sklearn.model_selection import RepeatedStratifiedKFold
 from sklearn.model_selection import GridSearchCV
-
 from sklearn.metrics import classification_report, confusion_matrix
 import numpy as np
 from pprint import pprint
@@ -43,17 +42,42 @@ def random_search_training(random_hyperparameter_grid, x_train, y_train):
     # Random search of parameters, using 10 fold cross validation,
     # search across 100 different combinations, and use all available scores
 
-    cv = RepeatedStratifiedKFold(n_splits=10, n_repeats=3, random_state=1)
+    cv = RepeatedStratifiedKFold(n_splits=10, n_repeats=1, random_state=1)
 
-    rf_random = RandomizedSearchCV(estimator=rf, param_distributions=random_hyperparameter_grid, n_iter=100, cv=cv,
-                                   verbose=2,
+    rf_random = RandomizedSearchCV(estimator=rf, param_distributions=random_hyperparameter_grid, n_iter=10, cv=cv,
+                                   verbose=2, scoring=['accuracy', 'precision', 'f1', 'recall', 'roc_auc'],
+                                   refit='roc_auc',
+                                   return_train_score=True,
                                    random_state=42, n_jobs=-1)
+    # Fit the random search model
+    rf_random.fit(x_train, y_train)
+
+    # rf_random.scorer_()
 
     pprint("rf_random: \n")
     pprint(rf_random)
-    # Fit the random search model
-    rf_random.fit(x_train, y_train)
-    print("best_params_: ", rf_random.best_params_)
+
+    pprint("rf_random.best_estimator_: \n")
+    pprint(rf_random.best_estimator_)
+
+    pprint("rf_random.best_params_: \n")
+    pprint(rf_random.best_params_)
+
+    pprint("rf_random.best_score_: \n")
+    pprint(rf_random.best_score_)
+
+    pprint("rf_random.best_index_: \n")
+    pprint(rf_random.best_index_)
+
+    pprint("rf_random.scorer_: ")
+    pprint(rf_random.scorer_)
+
+    pprint("rf_random.scoring: ")
+    pprint(rf_random.scoring)
+
+    pprint("rf_random.cv_results_: ")
+    pprint(rf_random.cv_results_)
+
     return rf_random
 
 
@@ -78,5 +102,20 @@ def grid_search_model_training(param_grid, x_train, y_train):
     grid_search_model = GridSearchCV(estimator=rf, param_grid=param_grid,
                                      cv=cv, n_jobs=-1, verbose=2)
     grid_search_model.fit(x_train, y_train)
-    print("best_params_: ", grid_search_model.best_params_)
+
+    pprint("grid_search_model: \n")
+    pprint(grid_search_model)
+
+    pprint("grid_search_model.best_estimator_: \n")
+    pprint(grid_search_model.best_estimator_)
+
+    pprint("grid_search_model.best_params_: \n")
+    pprint(grid_search_model.best_params_)
+
+    pprint("grid_search_model.best_score_: \n")
+    pprint(grid_search_model.best_score_)
+
+    pprint("grid_search_model.best_index_: \n")
+    pprint(grid_search_model.best_index_)
+
     return grid_search_model
