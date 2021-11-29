@@ -15,15 +15,17 @@ label_90_Y = label_90_Y.iloc[:, 1]
 # --------------------------------------------------
 x90_train, x90_test, y90_train, y90_test = utility.split_test_train(CKSAAP_90_X, label_90_Y)
 
-params = {'bootstrap': True, 'max_depth': 50, 'max_features': 'sqrt', 'min_samples_leaf': 1,
-          'min_samples_split': 2, 'n_estimators': 100}
+params = {'n_estimators': 400, 'min_samples_split': 2, 'min_samples_leaf': 1,
+          'max_features': 'sqrt', 'max_depth': 70, 'bootstrap': True}
+
 # # # --------------------------------------------------
 start = time.time()
 rfc_model = rf.train_rf_classifier(x_train=x90_train, y_train=y90_train, params=params)
-utility.save_model("CKSAAP_rf_main90_model.sav", rfc_model)
+utility.save_model("CKSAAP_rf_model_train.sav", rfc_model)
 print("model saved.")
 end = time.time()
-print("The time of execution of above program is :", end - start)
+print("rf train model took %s seconds." % (end - start))
 
-# rfc_model = utility.load_model("CKSAAP_rf_main90_model_79acc.sav")
-# rf.evaluate(rfc_model, x_test=x90_test, y_test=y90_test)
+rf.evaluate_and_log(rfc_model,
+                    x_test=x90_test, y_test=y90_test,
+                    log_filename="CKSAAP_rf_eval_after_test_log.txt")
