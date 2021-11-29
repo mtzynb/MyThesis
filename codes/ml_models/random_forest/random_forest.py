@@ -14,14 +14,15 @@ def train_rf_classifier(x_train, y_train, params):
     return rfc_model
 
 
-def evaluate(model, x_test, y_test):
+def evaluate_and_log(model, x_test, y_test, log_filename):
     predictions = model.predict(x_test)
-    print('Model Performance')
-    print('\n')
-    print("=== Confusion Matrix ===")
-    print(confusion_matrix(y_test, predictions))
-    print('\n')
-    print("=== Classification Report ===")
+    f = open(log_filename, "a")
+    f.write('Model Performance\n')
+    f.write("\n=== Confusion Matrix ===\n")
+    f.write(str(confusion_matrix(y_test, predictions)))
+    f.write("\n=== Classification Report ===\n")
     class_report = classification_report(y_test, predictions)
-    print(class_report)
+    print("class_report %s " % class_report)
+    f.write(class_report)
+
     return class_report

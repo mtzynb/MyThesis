@@ -1,0 +1,112 @@
+Model Performance
+
+=== Confusion Matrix ===
+[[86 21]
+ [20 61]]
+=== Classification Report ===
+              precision    recall  f1-score   support
+
+           0       0.81      0.80      0.81       107
+           1       0.74      0.75      0.75        81
+
+    accuracy                           0.78       188
+   macro avg       0.78      0.78      0.78       188
+weighted avg       0.78      0.78      0.78       188
+Model Performance
+
+=== Confusion Matrix ===
+[[85 22]
+ [21 60]]
+=== Classification Report ===
+              precision    recall  f1-score   support
+
+           0       0.80      0.79      0.80       107
+           1       0.73      0.74      0.74        81
+
+    accuracy                           0.77       188
+   macro avg       0.77      0.77      0.77       188
+weighted avg       0.77      0.77      0.77       188
+Model Performance
+
+=== Confusion Matrix ===
+[[87 20]
+ [19 62]]
+=== Classification Report ===
+              precision    recall  f1-score   support
+
+           0       0.82      0.81      0.82       107
+           1       0.76      0.77      0.76        81
+
+    accuracy                           0.79       188
+   macro avg       0.79      0.79      0.79       188
+weighted avg       0.79      0.79      0.79       188
+Model Performance
+
+=== Confusion Matrix ===
+[[86 21]
+ [20 61]]
+=== Classification Report ===
+              precision    recall  f1-score   support
+
+           0       0.81      0.80      0.81       107
+           1       0.74      0.75      0.75        81
+
+    accuracy                           0.78       188
+   macro avg       0.78      0.78      0.78       188
+weighted avg       0.78      0.78      0.78       188
+Model Performance
+
+=== Confusion Matrix ===
+[[84 23]
+ [20 61]]
+=== Classification Report ===
+              precision    recall  f1-score   support
+
+           0       0.81      0.79      0.80       107
+           1       0.73      0.75      0.74        81
+
+    accuracy                           0.77       188
+   macro avg       0.77      0.77      0.77       188
+weighted avg       0.77      0.77      0.77       188
+Model Performance
+
+=== Confusion Matrix ===
+[[87 20]
+ [21 60]]
+=== Classification Report ===
+              precision    recall  f1-score   support
+
+           0       0.81      0.81      0.81       107
+           1       0.75      0.74      0.75        81
+
+    accuracy                           0.78       188
+   macro avg       0.78      0.78      0.78       188
+weighted avg       0.78      0.78      0.78       188
+Model Performance
+
+=== Confusion Matrix ===
+[[84 23]
+ [19 62]]
+=== Classification Report ===
+              precision    recall  f1-score   support
+
+           0       0.82      0.79      0.80       107
+           1       0.73      0.77      0.75        81
+
+    accuracy                           0.78       188
+   macro avg       0.77      0.78      0.77       188
+weighted avg       0.78      0.78      0.78       188
+Model Performance
+
+=== Confusion Matrix ===
+[[84 23]
+ [21 60]]
+=== Classification Report ===
+              precision    recall  f1-score   support
+
+           0       0.80      0.79      0.79       107
+           1       0.72      0.74      0.73        81
+
+    accuracy                           0.77       188
+   macro avg       0.76      0.76      0.76       188
+weighted avg       0.77      0.77      0.77       188
