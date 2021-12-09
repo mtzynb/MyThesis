@@ -15,3 +15,10 @@ def load_model(filename):
     # load the model from disk
     return pickle.load(open(filename, 'rb'))
     # result = loaded_model.score(X_test, Y_test)
+
+
+def isStringContainsOf(str, qry):
+    if str.find(qry) == -1:
+        return False
+    else:
+        return True
