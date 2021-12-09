@@ -11,6 +11,7 @@ print(sfs.k_feature_names_)
 k_f_names = np.array(sfs.k_feature_names_)
 
 print(k_f_names)
+print("k_f_names:" , len(k_f_names))
 
 features = ['APseudoAAC', 'CKSAAP', 'CTD', 'DDE', 'KSCTriad', 'PseudoAAC', 'QSOrder']
 features_count = [0, 0, 0, 0, 0, 0, 0]

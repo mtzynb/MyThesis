@@ -44,11 +44,11 @@ X_train_sfs = x90_train.iloc[:, selected_idx]
 X_test_sfs = x90_test.iloc[:, selected_idx]
 print(X_train_sfs)
 # --------------------------------------------------
-params = {'n_estimators': 300,
+params = {'n_estimators': 200,
           'min_samples_split': 5,
           'min_samples_leaf': 1,
-          'max_features': 'auto',
-          'max_depth': 80,
+          'max_features': 'sqrt',
+          'max_depth': 100,
           'bootstrap': True}
 
 # # # --------------------------------------------------
