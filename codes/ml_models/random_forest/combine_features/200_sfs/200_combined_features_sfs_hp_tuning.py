@@ -8,7 +8,7 @@ import codes.ml_models.random_forest.rf_model_log as model_result_rf
 
 start_main = time.time()
 # --------------------------------------------------
-sfs_model_result_file = '../../../../feature_selection/wrapper_methods/200_features/200_combined_90_model.sav'
+sfs_model_result_file = '../../../../feature_selection/wrapper_methods/200_features/2/200_combined_90_model.sav'
 # --------------------------------------------------
 # -------------- X,Y ---------------------
 combined_90 = '../../../../../dropped_duplication_features/round3/combine_features/7features_combined_90_mixed_normalized_drpdup.tsv'
