@@ -8,10 +8,11 @@ import codes.ml_models.random_forest.rf_model_log as model_result_rf
 
 start_main = time.time()
 # --------------------------------------------------
-sfs_model_result_file = '../../../../feature_selection/wrapper_methods/100_features/100_combined_90_model.sav'
+sfs_model_result_file = '../../../../feature_selection/wrapper_methods/50_features/50_combined_90_model.sav'
+# --------------------------------------------------
 # -------------- X,Y ---------------------
-combined_90 = '../../../../../dropped_duplication_features/round3/combine_features/7features_combined_90_mixed_normalized_drpdup.tsv'
-label_90 = '../../../../../dropped_duplication_features/round3/combine_features/7features_combined_90_mixed_normalized_drpdup_label.tsv'
+combined_90 = '../../../../../dropped_duplication_features/round3/combined_features/7features_combined_90_mixed_normalized_drpdup.tsv'
+label_90 = '../../../../../dropped_duplication_features/round3/combined_features/7features_combined_90_mixed_normalized_drpdup_label.tsv'
 # ------------------------- random hyper param grid -------------------------
 random_hyper_param_grid = rf_hpt.get_random_hyper_parameter_grid()
 # ------------------------- get dfs -------------------------
@@ -48,8 +49,8 @@ print(sfs.k_score_)
 X_train_sfs = x90_train.iloc[:, selected_idx]
 X_test_sfs = x90_test.iloc[:, selected_idx]
 print(X_train_sfs)
-# write_data_frame_to_tsv_file(X_train_sfs, '100_sfs_mixed_normalized_90_drpdup_train.tsv')
-# write_data_frame_to_tsv_file(X_test_sfs, '100_sfs_mixed_normalized_90_drpdup_test.tsv')
+# write_data_frame_to_tsv_file(X_train_sfs, '50_sfs_mixed_normalized_90_drpdup_train.tsv')
+# write_data_frame_to_tsv_file(X_test_sfs, '50_sfs_mixed_normalized_90_drpdup_test.tsv')
 # --------------------------------------------------
 start = time.time()
 rf_random_model = rf_hpt.random_search_training(random_hyper_parameter_grid=random_hyper_param_grid,
@@ -86,7 +87,7 @@ print("whole script execution time: %s sec" % (time.time() - start_main))
 # start = time.time()
 
 # Create the parameter grid based on the results of above random search
-# {'bootstrap': True,'max_depth': 100,'max_features': 'sqrt','min_samples_leaf': 1,
+# {'bootstrap': True,'max_depth': 50,'max_features': 'sqrt','min_samples_leaf': 1,
 # 'min_samples_split': 2,'n_estimators': 100}
 
 

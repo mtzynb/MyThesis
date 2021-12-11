@@ -7,8 +7,8 @@ start_main = time.time()
 # --------------------------------------------------
 sfs_model_result_file = '../../../../feature_selection/wrapper_methods/100_features/100_combined_90_model.sav'
 # -------------- X,Y ---------------------
-combined_90 = '../../../../../dropped_duplication_features/round3/combine_features/7features_combined_90_mixed_normalized_drpdup.tsv'
-label_90 = '../../../../../dropped_duplication_features/round3/combine_features/7features_combined_90_mixed_normalized_drpdup_label.tsv'
+combined_90 = '../../../../../dropped_duplication_features/round3/combined_features/7features_combined_90_mixed_normalized_drpdup.tsv'
+label_90 = '../../../../../dropped_duplication_features/round3/combined_features/7features_combined_90_mixed_normalized_drpdup_label.tsv'
 # ------------------------- get dfs -------------------------
 combined_90_X = get_data_frame_from_tsv_file(combined_90)
 combined_90_X = combined_90_X.iloc[:, 1:3015]
