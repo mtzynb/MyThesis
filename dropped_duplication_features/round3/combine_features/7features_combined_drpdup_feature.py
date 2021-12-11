@@ -2,7 +2,7 @@ import codes.drop_duplicatess as dropdup
 from codes.tsv_file_utils import get_data_frame_from_tsv_file, write_data_frame_to_tsv_file
 
 # ------------ input files -------------
-combined_normalized_90 = '../../../normalized_features/round3/combine_features/7features_combined_90_mixed_normalized.tsv'
+combined_normalized_90 = '../../../normalized_features/round3/combined_features/7features_combined_90_mixed_normalized.tsv'
 # ------------ output files -------------
 dropdup_90 = '7features_combined_90_mixed_normalized_drpdup.tsv'
 # ---------------------------------------

@@ -11,8 +11,8 @@ start_main = time.time()
 sfs_model_result_file = '../../../../feature_selection/wrapper_methods/200_features/2/200_combined_90_model.sav'
 # --------------------------------------------------
 # -------------- X,Y ---------------------
-combined_90 = '../../../../../dropped_duplication_features/round3/combine_features/7features_combined_90_mixed_normalized_drpdup.tsv'
-label_90 = '../../../../../dropped_duplication_features/round3/combine_features/7features_combined_90_mixed_normalized_drpdup_label.tsv'
+combined_90 = '../../../../../dropped_duplication_features/round3/combined_features/7features_combined_90_mixed_normalized_drpdup.tsv'
+label_90 = '../../../../../dropped_duplication_features/round3/combined_features/7features_combined_90_mixed_normalized_drpdup_label.tsv'
 # ------------------------- random hyper param grid -------------------------
 random_hyper_param_grid = rf_hpt.get_random_hyper_parameter_grid()
 # ------------------------- get dfs -------------------------
