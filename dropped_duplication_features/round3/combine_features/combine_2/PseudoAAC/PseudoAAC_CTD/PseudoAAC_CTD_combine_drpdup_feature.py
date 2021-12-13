@@ -18,6 +18,6 @@ df90 = dropdup.drop_columns_with_same_values(df90)
 df90 = dropdup.drop_row_duplicates(df90)
 df90.reset_index(drop=True, inplace=True)
 
-print("After drop 90 cdhit, shape= ", df90.shape)  # (940, 302) => (940,286)
+print("After drop 90 cdhit, shape= ", df90.shape)  # (940, 302) => (940, 286)
 
 write_data_frame_to_tsv_file(df90, dropdup_90)
