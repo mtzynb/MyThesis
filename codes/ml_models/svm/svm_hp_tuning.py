@@ -1,5 +1,6 @@
 from pprint import pprint
 from sklearn.svm import SVC
+import numpy as np
 from sklearn.model_selection import RepeatedStratifiedKFold
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import classification_report, confusion_matrix
@@ -7,8 +8,10 @@ from sklearn.metrics import classification_report, confusion_matrix
 
 def get_random_hyper_parameter_grid():
     kernel = ['rbf']
+    # kernel = ['sigmoid']
     gamma = ['scale', 'auto']
-    c_range = [1]
+    # c_range = [1]
+    c_range = [x for x in np.logspace(-9, 3, 13)]
 
     # Create the random grid
     random_grid = {'kernel': kernel,
@@ -20,7 +23,7 @@ def get_random_hyper_parameter_grid():
 
 
 def grid_search_model_training(param_grid, x_train, y_train):
-    cv = RepeatedStratifiedKFold(n_splits=10, n_repeats=3, random_state=1)
+    cv = RepeatedStratifiedKFold(n_splits=10, n_repeats=1, random_state=1)
     # Instantiate the grid search model
     grid_search_model = GridSearchCV(estimator=SVC(), param_grid=param_grid,
                                      cv=cv, n_jobs=-1, verbose=2)
