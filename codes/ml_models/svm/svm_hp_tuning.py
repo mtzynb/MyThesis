@@ -1,4 +1,3 @@
-import numpy as np
 from pprint import pprint
 from sklearn.svm import SVC
 from sklearn.model_selection import RepeatedStratifiedKFold
