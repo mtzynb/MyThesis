@@ -7,7 +7,7 @@ from sklearn.metrics import classification_report, confusion_matrix
 
 
 def get_random_hyper_parameter_grid():
-    kernel = ['rbf']
+    kernel = ['rbf', 'linear']
     # kernel = ['sigmoid']
     gamma = ['scale', 'auto']
     # c_range = [1]
