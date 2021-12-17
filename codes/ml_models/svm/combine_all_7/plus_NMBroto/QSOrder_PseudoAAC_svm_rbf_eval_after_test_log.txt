@@ -1,0 +1,18 @@
+Model Performance
+
+=== Confusion Matrix ===
+[[80 27]
+ [18 63]]
+=== Classification Report ===
+              precision    recall  f1-score   support
+
+           0       0.82      0.75      0.78       107
+           1       0.70      0.78      0.74        81
+
+    accuracy                           0.76       188
+   macro avg       0.76      0.76      0.76       188
+weighted avg       0.77      0.76      0.76       188
+
+
+ train execution_time: (sec) 
+0.016999244689941406
