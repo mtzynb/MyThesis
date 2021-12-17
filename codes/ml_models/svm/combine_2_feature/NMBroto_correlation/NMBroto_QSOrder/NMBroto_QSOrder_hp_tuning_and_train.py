@@ -8,8 +8,8 @@ import codes.ml_models.svm.svm_classifier as svm_classifier
 
 start_main = time.time()
 # -------------- X,Y ---------------------
-pca_features_90 = '../../../../../../pca_features/round3/combined_features/combine_2/NMBroto_correlation/NMBroto_PseudoAAC/aa.tsv'
-label_90 = '../../../../../../pca_features/round3/combined_features/combine_2/NMBroto_correlation/NMBroto_PseudoAAC/pca_feature_labels.tsv'
+pca_features_90 = '../../../../../../pca_features/round3/combined_features/combine_2/NMBroto_correlation/NMBroto_QSOrder/aa.tsv'
+label_90 = '../../../../../../pca_features/round3/combined_features/combine_2/NMBroto_correlation/NMBroto_QSOrder/pca_feature_labels.tsv'
 # ------------------- random hyper param grid ---------------
 random_hyper_param_grid = svm_hpt.get_random_hyper_parameter_grid()
 # ------------------------- get dfs -------------------------
@@ -37,10 +37,10 @@ print("svm_random_model.best_estimator_: ")
 pprint(svm_random_model.best_estimator_)
 svm_hpt.evaluate(svm_random_model.best_estimator_, x90_test, y90_test)
 # ------------------------- save state -------------------------
-utility.save_model("NMBroto_PseudoAAC_svm_after_hp1_best_model.sav", svm_random_model.best_estimator_)
+utility.save_model("NMBroto_QSOrder_svm_after_hp1_best_model.sav", svm_random_model.best_estimator_)
 pprint("model saved.")
 
-model_result_log.svm_model_log("NMBroto_PseudoAAC_svm_after_hp1_model_log.txt",
+model_result_log.svm_model_log("NMBroto_QSOrder_svm_after_hp1_model_log.txt",
                                svm_random=svm_random_model,
                                best_estimator_=svm_random_model.best_estimator_,
                                best_params_=svm_random_model.best_params_,
@@ -60,9 +60,9 @@ svm_model_train = svm_classifier.train_predict_log(x_train=x90_train,
                                                    x_test=x90_test,
                                                    y_test=y90_test,
                                                    params=svm_random_model.best_params_,
-                                                   log_filename='NMBroto_PseudoAAC_svm_rbf_eval_after_test_log.txt')
+                                                   log_filename='NMBroto_QSOrder_svm_rbf_eval_after_test_log.txt')
 # --------------------------------------------------
-utility.save_model("NMBroto_PseudoAAC_svm_rbf_model_train.sav", svm_model_train)
+utility.save_model("NMBroto_QSOrder_svm_rbf_model_train.sav", svm_model_train)
 print("model saved.")
 # --------------------------------------------------
 print("whole script run took %s seconds." % (time.time() - start))
