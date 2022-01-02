@@ -1,6 +1,8 @@
 from mlxtend.plotting import plot_sequential_feature_selection as plot_sfs
 import codes.feature_selection.wrapper_methods.plot_sfss as my_plot_sfs
 import matplotlib.pyplot as plt
+from bidi.algorithm import get_display
+from arabic_reshaper import reshape
 
 
 def plot_f_selection(f_selector, title, figname):
@@ -23,5 +25,5 @@ def plot_f_selection3(f_selector, title, figname, feature_no, x_lable_steps):
         figname=figname,
         feature_no=feature_no,
         x_lable_steps=x_lable_steps,
-        ylabel='Performance (10-foldCV accuracy)'
+        ylabel=get_display(reshape('صحت'))
     )

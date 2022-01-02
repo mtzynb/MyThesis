@@ -8,6 +8,8 @@
 
 import matplotlib.pyplot as plt
 import numpy as np
+from bidi.algorithm import get_display
+from arabic_reshaper import reshape
 
 
 def plot_sequential_feature_selection(metric_dict,
@@ -98,9 +100,9 @@ def plot_sequential_feature_selection(metric_dict,
     # plt.ylim([0.45, 1])
 
     plt.ylabel(ylabel)
-    plt.xlabel('Number of Features')
+    plt.xlabel(get_display(reshape('تعداد ویژگی ها')), )
 
-    plt.xticks(np.arange(0, feature_no+1, step=x_lable_steps))
+    plt.xticks(np.arange(0, feature_no + 1, step=x_lable_steps))
     plt.yticks(np.arange(0.65, 1.05, step=0.05))
     plt.title(title)
     plt.grid()
